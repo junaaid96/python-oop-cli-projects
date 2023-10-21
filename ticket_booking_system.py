@@ -1,16 +1,10 @@
 class Star_Cinema:
   hall_list = []
 
-  def __inti__(self):
-    self.hall_list = []
-
   def entry_hall(self, hall):
     self.hall_list.append(hall)
 
-
 star_cinema = Star_Cinema()
-
-
 class Hall(Star_Cinema):
 
   def __init__(self, rows, cols, hall_no):
@@ -33,8 +27,9 @@ class Hall(Star_Cinema):
           if 1 <= row <= self._rows and 1 <= col <= self._cols:
             if seats[row - 1][col - 1] == 0:
               seats[row - 1][col - 1] = 1
+              print(f"Seat booked at ({row},{col}).")
             else:
-              print(f"Seat {row}-{col} is already booked!")
+              print(f"Seat ({row},{col}) is already booked!")
           else:
             print("Invalid seat input!")
         break
@@ -62,13 +57,12 @@ class Hall(Star_Cinema):
     else:
       print("Show is not found!")
 
-
 hall_101 = Hall(10, 10, 101)
 hall_101.entry_show(111, "3 Idiots", "21-10-23 3PM")
 hall_101.entry_show(333, "Chhichhore", "22-10-23 6PM")
 
 while True:
-  print("1. View all shows today")
+  print("1. View all shows")
   print("2. Book ticket")
   print("3. View available seats")
   print("4. Exit")
@@ -97,6 +91,6 @@ while True:
 
   elif option == "4":
     break
-
+  
   else:
     print("Please select a valid option.")
