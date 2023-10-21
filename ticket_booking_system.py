@@ -5,6 +5,7 @@ class Star_Cinema:
     self.hall_list.append(hall)
 
 star_cinema = Star_Cinema()
+
 class Hall(Star_Cinema):
 
   def __init__(self, rows, cols, hall_no):
