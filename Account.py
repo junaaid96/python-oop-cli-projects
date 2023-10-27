@@ -10,9 +10,10 @@ class Account:
         self.email = email
         self.address = address
         self.account_type = account_type
-        self.account_number = random.randint(1000, 2000)
+        self.account_number = random.randint(2000, 7000)
         self.balance = 0
-        self.deposited = 0
+        self.loan = 0
+        self.loan_count = 0
         self.transactions = []
 
         Account.total_accounts.append(self)
@@ -20,7 +21,6 @@ class Account:
     def deposit(self, amount):
         if amount >= 0:
             self.balance += amount
-            self.deposited += amount
             self.transactions.append(f"Deposited: {amount}")
             return f"{amount} deposited. Current balance: {self.balance}"
         else:
@@ -32,8 +32,6 @@ class Account:
         elif self.balance >= amount:
             self.balance -= amount
             return f"{amount} withdrawn. Current balance: {self.balance}"
-        elif self.deposited == amount:
-            return "Your bank is bankrupt"
         else:
             return "Withdrawal amount exceeded!"
 
@@ -45,8 +43,10 @@ class Account:
 
     def take_loan(self, loan_amount):
         if Account.loan_feature_enabled:
-            if len(self.transactions) < 2 and loan_amount > 0:
+            if self.loan_count < 2 and loan_amount > 0:
                 self.balance += loan_amount
+                self.loan += loan_amount
+                self.loan_count += 1
                 self.transactions.append(f"Loan taken: {loan_amount}")
                 return f"Loan {loan_amount} added. Current balance: {self.balance}"
             else:
@@ -72,9 +72,10 @@ class Account:
 class SavingsAccount(Account):
     def __init__(self, name, email, address) -> None:
         super().__init__(name, email, address, "Savings")
+        print(f"Your Account Number: {self.account_number}")
 
 
 class CurrentAccount(Account):
     def __init__(self, name, email, address) -> None:
         super().__init__(name, email, address, "Current")
-
+        print(f"Your Account Number: {self.account_number}")

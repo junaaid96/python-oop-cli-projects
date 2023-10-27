@@ -95,7 +95,8 @@ while True:
                 account_type = input(
                     "Enter account type (Savings or Current): ")
                 Bank.create_account(name, email, address, account_type)
-                print("Account created successfully.")
+                print(
+                    f"Account created successfully.")
 
             elif choice == "2":
                 account_number = int(input("Enter your account number: "))

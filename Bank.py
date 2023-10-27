@@ -32,7 +32,7 @@ class Bank:
 
     @staticmethod
     def total_loan_amount():
-        total_loan = sum(loan.deposited for loan in Account.total_accounts)
+        total_loan = sum(loan.loan for loan in Account.total_accounts)
         return f"Total loan amount granted: {total_loan}"
 
     @staticmethod
