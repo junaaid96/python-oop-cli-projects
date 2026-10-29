@@ -11,5 +11,9 @@ Work through projects in order; read the matching guide first.
 | 5 | 09 Parking Lot, 10 Log Analyzer | [05](05_abstraction.md), [06](06_composition_vs_inheritance.md) |
 | 6 | 11 Ride Sharing, 12 Inventory/POS | [14](14_solid_principles.md), [15](15_design_patterns.md) |
 | 7 | 13 Hotel, 14 URL Shortener, 15 Text Adventure | [13](13_packaging_and_tooling.md), [16](16_clean_code.md) |
+| 8 | Advanced Python (revisit 10, 14) | [19](19_iterators_and_generators.md), [20](20_advanced_typing.md), [21](21_concurrency_and_asyncio.md), [22](22_virtual_envs_and_packaging.md), [23](23_decorators_and_context_managers.md) |
+| 9 | 16 FreelanceHub: models, admin, HTML pages | [django/01](django/01_project_structure.md)–[django/08](django/08_admin.md) |
+| 10 | 16 FreelanceHub: REST API, tests, shipping | [django/09](django/09_drf.md)–[django/14](django/14_deployment.md) |
+| 11 | Interview prep | [24](24_python_interview_qa.md), [django/15](django/15_interview_qa.md) |
 
 For each project: run it → read the code and comments → run its tests → do at least two exercises from its README → keep `ruff`, `mypy` and `pytest` green.

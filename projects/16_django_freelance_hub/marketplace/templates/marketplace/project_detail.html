@@ -1,0 +1,7 @@
+{% extends "marketplace/base.html" %}
+{% block title %}{{ project.title }}{% endblock %}
+{% block content %}
+<h1>{{ project.title }}</h1>
+<p>Posted by {{ project.client.username }} · budget ${{ project.budget }} · {{ project.get_status_display }}</p>
+<p>{{ project.description|linebreaksbr }}</p>
+{% endblock %}

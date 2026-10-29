@@ -8,3 +8,7 @@ dist/
 *.db
 *.json.bak
 data/
+
+# Django
+db.sqlite3
+staticfiles/

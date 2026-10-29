@@ -1,0 +1,13 @@
+{% extends "marketplace/base.html" %}
+{% block content %}
+<h1>Open projects</h1>
+<ul>
+{% for project in object_list %}
+  <li><a href="{% url 'project-detail' project.pk %}">{{ project.title }}</a>
+    — ${{ project.budget }} · {{ project.proposal_count }} proposal{{ project.proposal_count|pluralize }}
+    {% for skill in project.skills.all %}<small>#{{ skill.name }}</small>{% endfor %}</li>
+{% empty %}
+  <li>No open projects yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}

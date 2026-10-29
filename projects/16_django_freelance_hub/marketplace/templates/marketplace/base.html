@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>{% block title %}FreelanceHub{% endblock %}</title></head>
+<body>
+  <nav><a href="{% url 'project-list' %}">Projects</a>
+    {% if user.is_authenticated and user.is_client %}| <a href="{% url 'project-create' %}">Post a project</a>{% endif %}
+  </nav>
+  <main>{% block content %}{% endblock %}</main>
+</body>
+</html>
