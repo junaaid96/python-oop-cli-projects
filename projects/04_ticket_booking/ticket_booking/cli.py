@@ -43,7 +43,11 @@ def run(
 
 
 def main() -> int:
-    run(demo_cinema())
+    try:
+        run(demo_cinema())
+    except (EOFError, KeyboardInterrupt):
+        # Ctrl-D / Ctrl-C: leave cleanly instead of showing a traceback.
+        print("\nGoodbye!")
     return 0
 
 

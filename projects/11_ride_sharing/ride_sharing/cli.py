@@ -50,7 +50,11 @@ def run(
 
 
 def main() -> int:
-    run(demo_service())
+    try:
+        run(demo_service())
+    except (EOFError, KeyboardInterrupt):
+        # Ctrl-D / Ctrl-C: leave cleanly instead of showing a traceback.
+        print("\nGoodbye!")
     return 0
 
 

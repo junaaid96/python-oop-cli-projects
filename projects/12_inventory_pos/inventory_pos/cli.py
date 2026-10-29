@@ -41,7 +41,11 @@ def run(
 
 
 def main() -> int:
-    run(demo_register())
+    try:
+        run(demo_register())
+    except (EOFError, KeyboardInterrupt):
+        # Ctrl-D / Ctrl-C: leave cleanly instead of showing a traceback.
+        print("\nGoodbye!")
     return 0
 
 

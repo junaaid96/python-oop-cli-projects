@@ -88,7 +88,11 @@ def run(bank: Bank, ask: Ask = input, say: Say = print) -> None:
 
 
 def main() -> int:
-    run(Bank("Practice Bank"))
+    try:
+        run(Bank("Practice Bank"))
+    except (EOFError, KeyboardInterrupt):
+        # Ctrl-D / Ctrl-C: leave cleanly instead of showing a traceback.
+        print("\nGoodbye!")
     return 0
 
 

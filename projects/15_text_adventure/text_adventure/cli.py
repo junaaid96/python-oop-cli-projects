@@ -32,7 +32,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     p.add_argument("--save-file", type=Path, default=SAVE)
     args = p.parse_args(argv)
     state = GameState.load(args.load) if args.load else new_game()
-    play(state, input, print, args.save_file)
+    try:
+        play(state, input, print, args.save_file)
+    except (EOFError, KeyboardInterrupt):
+        # Ctrl-D / Ctrl-C: leave cleanly instead of showing a traceback.
+        print("\nGoodbye!")
     return 0
 
 

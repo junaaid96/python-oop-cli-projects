@@ -42,7 +42,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="parking-lot")
     parser.add_argument("--pricing", choices=["hourly", "daily"], default="hourly")
     args = parser.parse_args(argv)
-    run(demo_lot(FlatDailyPricing() if args.pricing == "daily" else HourlyPricing()))
+    try:
+        run(demo_lot(FlatDailyPricing() if args.pricing == "daily" else HourlyPricing()))
+    except (EOFError, KeyboardInterrupt):
+        # Ctrl-D / Ctrl-C: leave cleanly instead of showing a traceback.
+        print("\nGoodbye!")
     return 0
 
 

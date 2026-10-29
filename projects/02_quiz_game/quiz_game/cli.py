@@ -13,7 +13,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
     quiz = Quiz(default_questions(), shuffle=not args.no_shuffle)
     # Pass the real input/print functions; tests pass fakes instead.
-    result = quiz.run(input, print)
+    try:
+        result = quiz.run(input, print)
+    except (EOFError, KeyboardInterrupt):
+        # Ctrl-D / Ctrl-C: leave cleanly instead of showing a traceback.
+        print("\nGoodbye!")
+        return 0
     print(f"\nScore: {result.score}/{result.total} ({result.percent:.0f}%)")
     return 0
 
