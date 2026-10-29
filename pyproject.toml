@@ -1,0 +1,73 @@
+[project]
+name = "python-oop-cli-projects"
+version = "1.0.0"
+description = "Laddered Python OOP practice: 15 command-line projects with tests and concept guides."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.13"
+authors = [{ name = "Md. Junaidul Islam" }]
+dependencies = []
+
+[project.scripts]
+contact-book = "contact_book.cli:main"
+quiz-game = "quiz_game.cli:main"
+todo = "todo_manager.cli:main"
+ticket-booking = "ticket_booking.cli:main"
+file-organizer = "file_organizer.cli:main"
+banking = "banking_system.cli:main"
+expense-tracker = "expense_tracker.cli:main"
+library = "library_management.cli:main"
+parking-lot = "parking_lot.cli:main"
+log-analyzer = "log_analyzer.cli:main"
+ride-sharing = "ride_sharing.cli:main"
+inventory-pos = "inventory_pos.cli:main"
+hotel = "hotel_reservation.cli:main"
+url-shortener = "url_shortener.cli:main"
+text-adventure = "text_adventure.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8.3", "ruff>=0.7", "mypy>=1.13"]
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+  "projects/01_contact_book/contact_book",
+  "projects/02_quiz_game/quiz_game",
+  "projects/03_todo_manager/todo_manager",
+  "projects/04_ticket_booking/ticket_booking",
+  "projects/05_file_organizer/file_organizer",
+  "projects/06_banking_system/banking_system",
+  "projects/07_expense_tracker/expense_tracker",
+  "projects/08_library_management/library_management",
+  "projects/09_parking_lot/parking_lot",
+  "projects/10_log_analyzer/log_analyzer",
+  "projects/11_ride_sharing/ride_sharing",
+  "projects/12_inventory_pos/inventory_pos",
+  "projects/13_hotel_reservation/hotel_reservation",
+  "projects/14_url_shortener/url_shortener",
+  "projects/15_text_adventure/text_adventure",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["projects"]
+addopts = "-q --import-mode=importlib"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "N", "RUF"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+files = ["projects"]
+explicit_package_bases = false
+
+[tool.ruff.lint.per-file-ignores]
+# Tests use `Decimal as D` for compact money literals.
+"projects/*/tests/*" = ["N817"]
