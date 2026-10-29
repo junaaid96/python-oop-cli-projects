@@ -84,10 +84,10 @@ class Ride_Matching:
 
 
 uber = Ride_Sharing("Uber")
-abid = Driver("Abid", "abid@gmail.com", 12345, "Kajir Dewri 1")
-rakib = Rider("Rakib", "rakib@gmail.com", 67890, "Kajir Dewri 2")
+abid = Driver("Abid", "abid@gmail.com", 12345, "Point A")
+rakib = Rider("Rakib", "rakib@gmail.com", 67890, "Point B")
 
 driver = uber.add_driver(abid)
 rider = uber.add_rider(rakib)
 
-print(rakib.ride_request(uber, "Chawkbazar"))
+print(rakib.ride_request(uber, "Point C"))
