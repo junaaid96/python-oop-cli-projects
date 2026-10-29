@@ -6,7 +6,11 @@
 
 16 projects: 15 laddered command-line (CLI) projects for learning object-oriented (and functional) Python, from a first class to layered, tested applications, plus a Django + Django REST Framework (DRF) capstone. Each project has heavily commented source, tests and a list of exercises. The `docs/` folder has a concept guide for each topic, advanced Python guides, a full [Django & DRF track](docs/django/README.md) and interview Q&A.
 
+## Website
+Read everything as a searchable site: **[junaaid96.github.io/python-oop-cli-projects](https://junaaid96.github.io/python-oop-cli-projects/)** (guides, the Django & DRF track and every project with its source). It is built from this repo's Markdown by [`website/`](website/README.md) and deployed on each push to `main`.
+
 ## Table of contents
+- [Website](#website)
 - [Quick start](#quick-start)
 - [Projects](#projects)
 - [Concept guides](#concept-guides)
