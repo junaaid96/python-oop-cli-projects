@@ -22,4 +22,13 @@ Concept guides for building web apps and APIs with **Django 6** and **Django RES
 | 14 | [Deployment](14_deployment.md) | gunicorn/uvicorn, static files, PostgreSQL, Docker |
 | 15 | [Interview Q&A](15_interview_qa.md) | 40 common Django/DRF questions with short answers |
 
-Suggested order: 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08, then build the project's HTML pages; 09 → 13 for the API; 10, 11, 12, 14 before you ship.
+## Suggested order
+
+1. **Foundations (01–08):** read [01](01_project_structure.md) → [02](02_models_and_orm.md) → [03](03_migrations.md) → [04](04_views.md) → [05](05_templates.md) → [06](06_forms.md) → [07](07_auth_and_permissions.md) → [08](08_admin.md), then build the capstone's models, admin and HTML pages.
+2. **REST API (09):** read [09 Django REST Framework](09_drf.md) and build the API.
+3. **Configuration (10):** move settings to env vars with [10 Settings & config](10_settings_and_config.md).
+4. **Performance and background work (11):** add [11 Caching & Celery](11_caching_and_celery.md).
+5. **Security (12):** run through the [12 Security checklist](12_security_checklist.md).
+6. **Testing (13):** cover pages and API with [13 Testing with pytest-django](13_testing.md).
+7. **Shipping (14):** deploy with [14 Deployment](14_deployment.md).
+8. **Interview prep (15):** finish with [15 Interview Q&A](15_interview_qa.md).

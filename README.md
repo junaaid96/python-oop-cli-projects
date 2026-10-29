@@ -4,12 +4,15 @@
 ![Django 6](https://img.shields.io/badge/django-6.x-092e20)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
-15 laddered command-line projects for learning object-oriented (and functional) Python, from a first class to layered, tested applications, plus a Django + Django REST Framework capstone. Each project has heavily commented source, tests and a list of exercises. The `docs/` folder has a concept guide for each topic, advanced Python guides, a full [Django & DRF track](docs/django/README.md) and interview Q&A.
+16 projects: 15 laddered command-line (CLI) projects for learning object-oriented (and functional) Python, from a first class to layered, tested applications, plus a Django + Django REST Framework (DRF) capstone. Each project has heavily commented source, tests and a list of exercises. The `docs/` folder has a concept guide for each topic, advanced Python guides, a full [Django & DRF track](docs/django/README.md) and interview Q&A.
 
 ## Table of contents
 - [Quick start](#quick-start)
 - [Projects](#projects)
 - [Concept guides](#concept-guides)
+  - [Core OOP guides (01–18)](#core-oop-guides-0118)
+  - [Advanced Python (19–24)](#advanced-python-1924)
+  - [Django & DRF track (D01–D15)](#django--drf-track-d01d15)
 - [Repository layout](#repository-layout)
 - [Development](#development)
 - [History](#history)
@@ -51,6 +54,8 @@ Each project folder has a README with what you'll learn, how to run it, and **ex
 ## Concept guides
 Start with the [learning path](docs/00_learning_path.md).
 
+### Core OOP guides (01–18)
+
 1. [Classes and objects](docs/01_classes_and_objects.md)
 2. [Encapsulation](docs/02_encapsulation.md)
 3. [Inheritance](docs/03_inheritance.md)
@@ -70,7 +75,7 @@ Start with the [learning path](docs/00_learning_path.md).
 17. [Functional programming](docs/17_functional_programming.md)
 18. [OOP vs functional: when to use which](docs/18_oop_vs_functional.md)
 
-**Advanced Python**
+### Advanced Python (19–24)
 
 19. [Iterators and generators](docs/19_iterators_and_generators.md)
 20. [Advanced typing](docs/20_advanced_typing.md)
@@ -79,9 +84,27 @@ Start with the [learning path](docs/00_learning_path.md).
 23. [Decorators and context managers](docs/23_decorators_and_context_managers.md)
 24. [Python interview Q&A](docs/24_python_interview_qa.md)
 
-**Django & DRF** ([track overview](docs/django/README.md))
+### Django & DRF track (D01–D15)
 
-1. [Project structure](docs/django/01_project_structure.md) · 2. [Models & ORM](docs/django/02_models_and_orm.md) · 3. [Migrations](docs/django/03_migrations.md) · 4. [Views](docs/django/04_views.md) · 5. [Templates](docs/django/05_templates.md) · 6. [Forms](docs/django/06_forms.md) · 7. [Auth & permissions](docs/django/07_auth_and_permissions.md) · 8. [Admin](docs/django/08_admin.md) · 9. [Django REST Framework](docs/django/09_drf.md) · 10. [Settings & config](docs/django/10_settings_and_config.md) · 11. [Caching & Celery](docs/django/11_caching_and_celery.md) · 12. [Security checklist](docs/django/12_security_checklist.md) · 13. [Testing with pytest-django](docs/django/13_testing.md) · 14. [Deployment](docs/django/14_deployment.md) · 15. [Interview Q&A](docs/django/15_interview_qa.md)
+Used by the [16 FreelanceHub](projects/16_django_freelance_hub) capstone. See the [track overview](docs/django/README.md) for what each guide covers and the suggested order.
+
+| # | Guide |
+|---|---|
+| D01 | [Project structure](docs/django/01_project_structure.md) |
+| D02 | [Models & ORM](docs/django/02_models_and_orm.md) |
+| D03 | [Migrations](docs/django/03_migrations.md) |
+| D04 | [Views](docs/django/04_views.md) |
+| D05 | [Templates](docs/django/05_templates.md) |
+| D06 | [Forms](docs/django/06_forms.md) |
+| D07 | [Auth & permissions](docs/django/07_auth_and_permissions.md) |
+| D08 | [Admin](docs/django/08_admin.md) |
+| D09 | [Django REST Framework](docs/django/09_drf.md) |
+| D10 | [Settings & config](docs/django/10_settings_and_config.md) |
+| D11 | [Caching & Celery](docs/django/11_caching_and_celery.md) |
+| D12 | [Security checklist](docs/django/12_security_checklist.md) |
+| D13 | [Testing with pytest-django](docs/django/13_testing.md) |
+| D14 | [Deployment](docs/django/14_deployment.md) |
+| D15 | [Interview Q&A](docs/django/15_interview_qa.md) |
 
 ## Repository layout
 ```

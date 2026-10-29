@@ -16,4 +16,6 @@ Work through projects in order; read the matching guide first.
 | 10 | 16 FreelanceHub: REST API, tests, shipping | [django/09](django/09_drf.md)–[django/14](django/14_deployment.md) |
 | 11 | Interview prep | [24](24_python_interview_qa.md), [django/15](django/15_interview_qa.md) |
 
+Guide groups: core OOP 01–18, Advanced Python 19–24, then the [Django & DRF track](django/README.md) (django/01–15).
+
 For each project: run it → read the code and comments → run its tests → do at least two exercises from its README → keep `ruff`, `mypy` and `pytest` green.
