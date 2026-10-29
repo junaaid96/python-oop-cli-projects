@@ -1,0 +1,5 @@
+{% extends "marketplace/base.html" %}
+{% block content %}
+<h1>Post a project</h1>
+<form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Publish</button></form>
+{% endblock %}

@@ -1,7 +1,7 @@
 [project]
 name = "python-oop-cli-projects"
 version = "1.0.0"
-description = "Laddered Python OOP practice: 15 command-line projects with tests and concept guides."
+description = "Laddered Python practice: 15 OOP command-line projects, a Django + DRF project, tests and concept guides."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.13"
@@ -26,7 +26,18 @@ url-shortener = "url_shortener.cli:main"
 text-adventure = "text_adventure.cli:main"
 
 [dependency-groups]
-dev = ["pytest>=8.3", "ruff>=0.7", "mypy>=1.13"]
+dev = [
+  "pytest>=8.3",
+  "ruff>=0.7",
+  "mypy>=1.13",
+  "pytest-django>=4.11",
+  "django-stubs[compatible-mypy]>=5.2",
+  "djangorestframework-stubs>=3.16",
+]
+django = ["django>=6.0,<6.2", "djangorestframework>=3.16", "django-stubs-ext>=5.2"]
+
+[tool.uv]
+default-groups = ["dev", "django"]
 
 [build-system]
 requires = ["hatchling>=1.26"]
@@ -54,6 +65,8 @@ packages = [
 [tool.pytest.ini_options]
 testpaths = ["projects"]
 addopts = "-q --import-mode=importlib"
+DJANGO_SETTINGS_MODULE = "hub_site.settings"
+pythonpath = ["projects/16_django_freelance_hub"]
 
 [tool.ruff]
 line-length = 100
@@ -68,7 +81,15 @@ python_version = "3.13"
 strict = true
 files = ["projects"]
 explicit_package_bases = false
+mypy_path = "projects/16_django_freelance_hub"
+plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "hub_site.settings"
 
 [tool.ruff.lint.per-file-ignores]
 # Tests use `Decimal as D` for compact money literals.
 "projects/*/tests/*" = ["N817"]
+"projects/16_django_freelance_hub/*/migrations/*" = ["E501", "RUF012"]
+# Django's `class Meta` options are plain lists by convention.
+"projects/16_django_freelance_hub/marketplace/models.py" = ["RUF012"]

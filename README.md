@@ -1,10 +1,10 @@
 # Python OOP CLI Projects
 
-[![CI](https://github.com/junaaid96/python-oop-cli-projects/actions/workflows/ci.yml/badge.svg)](https://github.com/junaaid96/python-oop-cli-projects/actions/workflows/ci.yml)
 ![Python 3.13+](https://img.shields.io/badge/python-3.13%2B-blue)
+![Django 6](https://img.shields.io/badge/django-6.x-092e20)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
-15 laddered command-line projects for learning object-oriented (and functional) Python, from a first class to layered, tested applications. Each project has heavily commented source, tests and a list of exercises. The `docs/` folder has a concept guide for each topic.
+15 laddered command-line projects for learning object-oriented (and functional) Python, from a first class to layered, tested applications, plus a Django + Django REST Framework capstone. Each project has heavily commented source, tests and a list of exercises. The `docs/` folder has a concept guide for each topic, advanced Python guides, a full [Django & DRF track](docs/django/README.md) and interview Q&A.
 
 ## Table of contents
 - [Quick start](#quick-start)
@@ -44,6 +44,7 @@ uv run pytest           # run all tests
 | 13 | [Hotel Reservation](projects/13_hotel_reservation) | ⭐⭐⭐ Advanced | `hotel` | layered architecture, repository |
 | 14 | [URL Shortener](projects/14_url_shortener) | ⭐⭐⭐ Advanced | `url-shortener` | Protocol, dependency inversion |
 | 15 | [Text Adventure](projects/15_text_adventure) | ⭐⭐⭐ Advanced | `text-adventure` | Command pattern, save/load |
+| 16 | [FreelanceHub (Django + DRF)](projects/16_django_freelance_hub) | ⭐⭐⭐⭐ Capstone | `manage.py runserver` | ORM, N+1, CBV/FBV, forms, admin, REST API, permissions, pytest-django |
 
 Each project folder has a README with what you'll learn, how to run it, and **exercises** to extend it.
 
@@ -69,13 +70,26 @@ Start with the [learning path](docs/00_learning_path.md).
 17. [Functional programming](docs/17_functional_programming.md)
 18. [OOP vs functional: when to use which](docs/18_oop_vs_functional.md)
 
+**Advanced Python**
+
+19. [Iterators and generators](docs/19_iterators_and_generators.md)
+20. [Advanced typing](docs/20_advanced_typing.md)
+21. [Concurrency and asyncio](docs/21_concurrency_and_asyncio.md)
+22. [Virtual environments and packaging](docs/22_virtual_envs_and_packaging.md)
+23. [Decorators and context managers](docs/23_decorators_and_context_managers.md)
+24. [Python interview Q&A](docs/24_python_interview_qa.md)
+
+**Django & DRF** ([track overview](docs/django/README.md))
+
+1. [Project structure](docs/django/01_project_structure.md) · 2. [Models & ORM](docs/django/02_models_and_orm.md) · 3. [Migrations](docs/django/03_migrations.md) · 4. [Views](docs/django/04_views.md) · 5. [Templates](docs/django/05_templates.md) · 6. [Forms](docs/django/06_forms.md) · 7. [Auth & permissions](docs/django/07_auth_and_permissions.md) · 8. [Admin](docs/django/08_admin.md) · 9. [Django REST Framework](docs/django/09_drf.md) · 10. [Settings & config](docs/django/10_settings_and_config.md) · 11. [Caching & Celery](docs/django/11_caching_and_celery.md) · 12. [Security checklist](docs/django/12_security_checklist.md) · 13. [Testing with pytest-django](docs/django/13_testing.md) · 14. [Deployment](docs/django/14_deployment.md) · 15. [Interview Q&A](docs/django/15_interview_qa.md)
+
 ## Repository layout
 ```
 projects/NN_name/
 ├── package/        # source (cli.py + domain modules)
 ├── tests/          # pytest suite
 └── README.md       # concepts, run command, exercises
-docs/               # concept guides
+docs/               # concept guides (docs/django/ = Django & DRF track)
 legacy/             # original scripts, kept with their git history
 ```
 
@@ -86,7 +100,7 @@ uv run ruff format .         # format
 uv run mypy                  # strict type check
 uv run pytest                # tests
 ```
-GitHub Actions runs all four on every push and pull request.
+Run all four before every commit.
 
 ## History
 This repo merges three earlier practice repos, with their full git history kept under `legacy/`:
